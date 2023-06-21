@@ -162,7 +162,7 @@ async def price(message: Message, state: FSMContext) -> None:
     data = await state.get_data()
     if not data.get('complete'):
         await state.update_data(price=None)
-    if not data.get('rooms'):
+    if not data.get('room_amount'):
         await state.update_data(room_amount=message.text)
     await state.set_state(CreateAdvertisement.square) if not data.get('complete') else await state.set_state(
         ChangeAdv.price)
@@ -637,7 +637,7 @@ async def complete(message: Message, state: FSMContext) -> None:
     _json = await adv_request(message.chat.id, data)
     print(_json)
     if _json.get('id'):
-        await add_adv(message.chat.id, _json.get('id'), data.get('location'))
+        await add_adv(message.chat.id, _json.get('id'), data.get('location'), data.get('scheme'))
         await message.answer(
             f"Congratulation, your Advertisement id: {_json.get('id')}",
             reply_markup=ReplyKeyboardRemove()
@@ -647,7 +647,7 @@ async def complete(message: Message, state: FSMContext) -> None:
         await main_menu(message, state)
     else:
         await message.answer(
-            f"Error {_json.get('detail')}",
+            f"Error {_json}",
             reply_markup=ReplyKeyboardRemove()
         )
         await state.set_state(CreateAdvertisement.check)

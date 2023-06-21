@@ -14,20 +14,21 @@ async def add_user(user_id, data):
     COLLECTION.insert_one({
         '_id': user_id,
         'date': str(date),
-        'emil': data['email'],
+        'email': data['email'],
         'password': hashed,
         'access_token': data['access'],
         'refresh_token': data['refresh']
     })
 
 
-async def add_adv(user_id, adv_id, location):
+async def add_adv(user_id, adv_id, location, scheme):
     date = datetime.now().date()
     COLLECTION_ADV.insert_one({
-        '_id': user_id,
+        '_id': adv_id,
         'date': str(date),
-        'adv_id': adv_id,
-        'location': location
+        'user': user_id,
+        'location': location,
+        'scheme': scheme,
     })
 
 
@@ -56,3 +57,18 @@ async def get_new_token(user_id):
         return True
     else:
         return False
+
+
+async def get_adv(flat_id, user_id):
+    await get_new_token(user_id)
+    user = await get_user(user_id)
+    async with ClientSession() as session:
+        async with session.get(
+            url=f'{API_ROOT}/api/v1/flat/{flat_id}/',
+            headers={
+                'Authorization': f'Bearer {user.get("access_token")}',
+            },
+        ) as response:
+            _json = await response.json()
+            return _json
+

@@ -5,13 +5,19 @@ from keyboards.reply.main_menu import main_keyboard
 from keyboards.reply.retry import *
 from keyboards.reply.start import *
 from services.validators import *
+from states.advertisement import Advertisement
 from states.create_adv import CreateAdvertisement
 from states.main_menu import MainMenu
+from states.profile_state import Profile
 from states.start import *
 
 router = Router()
 
 
+@router.message(Advertisement.all, F.text.casefold() == "main menu")
+@router.message(Profile.my_adv, F.text.casefold() == "main menu")
+@router.message(Profile.profile, F.text.casefold() == "main menu")
+@router.message(Profile.choice, F.text.casefold() == "decline")
 @router.message(CreateAdvertisement.validate, F.text.casefold() == "decline")
 @router.message(CreateAdvertisement.corps, F.text.casefold() == "decline")
 @router.message(CreateAdvertisement.floor, F.text.casefold() == "decline")

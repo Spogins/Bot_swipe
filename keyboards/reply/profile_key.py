@@ -1,13 +1,15 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 
-def main_keyboard():
+def profile_keyboard():
     keywords = ReplyKeyboardMarkup(
                 keyboard=[
                     [
-                        KeyboardButton(text="Advertisements"),
-                        KeyboardButton(text="Create Advertisement"),
-                        KeyboardButton(text="Profile"),
+                        KeyboardButton(text="My Profile"),
+                        KeyboardButton(text="My Advertisement"),
+                    ],
+                    [
+                        KeyboardButton(text="Decline"),
                     ]
                 ],
                 resize_keyboard=True,
@@ -15,11 +17,12 @@ def main_keyboard():
     return keywords
 
 
-def to_menu():
+def user_key():
     keywords = ReplyKeyboardMarkup(
                 keyboard=[
                     [
                         KeyboardButton(text="Main Menu"),
+                        KeyboardButton(text="Profile Menu"),
                     ],
                 ],
                 resize_keyboard=True,

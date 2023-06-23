@@ -1,6 +1,6 @@
 from aiogram import types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
+from aiogram.utils.i18n import gettext as _
 from configs.settings import BOT, dp
 
 
@@ -9,7 +9,7 @@ def show_location(location):
     location = f"location_{location.get('latitude')}-{location.get('longitude')}"
     inline_keyboard = [
         [
-            types.InlineKeyboardButton(text='Показать локацию', callback_data=location)
+            types.InlineKeyboardButton(text=_('Show location'), callback_data=location)
         ]
     ]
 

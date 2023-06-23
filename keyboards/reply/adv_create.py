@@ -1,5 +1,5 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
-
+from aiogram.utils.i18n import gettext as _
 # draft = ('draft', 'Черновая')
 # repair_required = ('repair', 'Нужен ремонт')
 # good = ('good', 'В жилом состоянии')
@@ -9,11 +9,11 @@ def conditions_choice() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text="draft"),
-                KeyboardButton(text="repair"),
-                KeyboardButton(text="good"),
-                KeyboardButton(text="Decline"),
-                KeyboardButton(text="Back"),
+                KeyboardButton(text=_("draft")),
+                KeyboardButton(text=_("repair")),
+                KeyboardButton(text=_("good")),
+                KeyboardButton(text=_("Decline")),
+                KeyboardButton(text=_("Back")),
             ]
         ],
         resize_keyboard=True,
@@ -25,12 +25,12 @@ def conditions_changing() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text="draft"),
-                KeyboardButton(text="repair"),
-                KeyboardButton(text="good"),
+                KeyboardButton(text=_("draft")),
+                KeyboardButton(text=_("repair")),
+                KeyboardButton(text=_("good")),
             ],
             [
-                KeyboardButton(text="Decline changing"),
+                KeyboardButton(text=_("Decline changing")),
             ]
         ],
         resize_keyboard=True,
@@ -42,10 +42,10 @@ def planning_choice() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text="studio"),
-                KeyboardButton(text="studio-bathroom"),
-                KeyboardButton(text="Decline"),
-                KeyboardButton(text="Back"),
+                KeyboardButton(text=_("studio")),
+                KeyboardButton(text=_("studio-bathroom")),
+                KeyboardButton(text=_("Decline")),
+                KeyboardButton(text=_("Back")),
             ]
         ],
         resize_keyboard=True,
@@ -57,11 +57,11 @@ def planning_changing() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text="studio"),
-                KeyboardButton(text="studio-bathroom"),
+                KeyboardButton(text=_("studio")),
+                KeyboardButton(text=_("studio-bathroom")),
             ],
             [
-                KeyboardButton(text="Decline changing"),
+                KeyboardButton(text=_("Decline changing")),
             ]
         ],
         resize_keyboard=True,
@@ -73,10 +73,10 @@ def balcony_choice() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text="Yes"),
-                KeyboardButton(text="No"),
-                KeyboardButton(text="Decline"),
-                KeyboardButton(text="Back"),
+                KeyboardButton(text=_("Yes")),
+                KeyboardButton(text=_("No")),
+                KeyboardButton(text=_("Decline")),
+                KeyboardButton(text=_("Back")),
             ]
         ],
         resize_keyboard=True,
@@ -88,11 +88,11 @@ def balcony_changing() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text="Yes"),
-                KeyboardButton(text="No"),
+                KeyboardButton(text=_("Yes")),
+                KeyboardButton(text=_("No")),
             ],
             [
-                KeyboardButton(text="Decline changing"),
+                KeyboardButton(text=_("Decline changing")),
             ]
         ],
         resize_keyboard=True,
@@ -104,9 +104,9 @@ def location_add() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text="Add location", request_location=True),
-                KeyboardButton(text="Decline"),
-                KeyboardButton(text="Back"),
+                KeyboardButton(text=_("Add location"), request_location=True),
+                KeyboardButton(text=_("Decline")),
+                KeyboardButton(text=_("Back")),
             ]
         ],
         resize_keyboard=True,
@@ -118,37 +118,37 @@ def change_adv() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text="Change Residential"),
-                KeyboardButton(text="Change Corps"),
-                KeyboardButton(text="Change Section"),
+                KeyboardButton(text=_("Change Residential")),
+                KeyboardButton(text=_("Change Corps")),
+                KeyboardButton(text=_("Change Section")),
             ],
             [
-                KeyboardButton(text="Change Floor"),
-                KeyboardButton(text="Change Room amount"),
-                KeyboardButton(text="Change Price"),
+                KeyboardButton(text=_("Change Floor")),
+                KeyboardButton(text=_("Change Room amount")),
+                KeyboardButton(text=_("Change Price")),
             ],
             [
-                KeyboardButton(text="Change Square"),
-                KeyboardButton(text="Change Kitchen square"),
-                KeyboardButton(text="Change Balcony"),
+                KeyboardButton(text=_("Change Square")),
+                KeyboardButton(text=_("Change Kitchen square")),
+                KeyboardButton(text=_("Change Balcony")),
             ],
             [
-                KeyboardButton(text="Change Commission"),
-                KeyboardButton(text="Change District"),
-                KeyboardButton(text="Change Micro District"),
+                KeyboardButton(text=_("Change Commission")),
+                KeyboardButton(text=_("Change District")),
+                KeyboardButton(text=_("Change Micro District")),
             ],
             [
-                KeyboardButton(text="Change Living condition"),
-                KeyboardButton(text="Change Planning"),
-                KeyboardButton(text="Change Scheme"),
+                KeyboardButton(text=_("Change Living condition")),
+                KeyboardButton(text=_("Change Planning")),
+                KeyboardButton(text=_("Change Scheme")),
             ],
             [
-                KeyboardButton(text="Change Photo gallery"),
-                KeyboardButton(text="Change Location"),
+                KeyboardButton(text=_("Change Photo gallery")),
+                KeyboardButton(text=_("Change Location")),
             ],
             [
-                KeyboardButton(text="Complete"),
-                KeyboardButton(text="Decline"),
+                KeyboardButton(text=_("Complete")),
+                KeyboardButton(text=_("Decline")),
             ]
 
         ],

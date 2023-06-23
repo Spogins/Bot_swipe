@@ -1,12 +1,13 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.utils.i18n import gettext as _
 
 
 def try_or_exit():
     keywords = ReplyKeyboardMarkup(
                 keyboard=[
                     [
-                        KeyboardButton(text="Try again"),
-                        KeyboardButton(text="Decline"),
+                        KeyboardButton(text=_("Try again")),
+                        KeyboardButton(text=_("Decline")),
                     ]
                 ],
                 resize_keyboard=True,
@@ -18,7 +19,7 @@ def decline_changing():
     keywords = ReplyKeyboardMarkup(
                 keyboard=[
                     [
-                        KeyboardButton(text="Decline changing"),
+                        KeyboardButton(text=_("Decline changing")),
                     ]
                 ],
                 resize_keyboard=True,

@@ -1,7 +1,8 @@
 from aiogram import Router, F
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, ReplyKeyboardRemove
-
+from aiogram.utils.i18n import gettext as _
+from aiogram.utils.i18n import lazy_gettext as __
 from handlers.start import command_start
 from keyboards.reply.retry import *
 from keyboards.reply.start import *
@@ -12,14 +13,14 @@ from states.start import *
 router = Router()
 
 
-@router.message(Register.complete, F.text.casefold() == "change email")
-@router.message(Register.email, F.text.casefold() == "try again")
-@router.message(Register.validate_psw, F.text.casefold() == "back")
+@router.message(Register.complete, F.text.casefold() == __("change email"))
+@router.message(Register.email, F.text.casefold() == __("try again"))
+@router.message(Register.validate_psw, F.text.casefold() == __("back"))
 @router.message(Register.email)
-@router.message(Start.start, F.text.casefold() == "registration")
+@router.message(Start.start, F.text.casefold() == __("registration"))
 async def log_mail(message: Message, state: FSMContext) -> None:
     await message.answer(
-        "Enter your email",
+        _("Enter your email"),
         reply_markup=exit_key()
     )
 
@@ -42,27 +43,27 @@ async def try_validate(message: Message, state: FSMContext) -> None:
                 await complete(message, state)
         else:
             await message.answer(
-                f"Mail already in use!",
+                _("Mail already in use!"),
                 reply_markup=try_or_exit(),
             )
             await state.set_state(Register.email)
     else:
         # if not valid, ask the user to try again or cancel to exit
         await message.answer(
-            f"You entered is not valid email!",
+            _("You entered is not valid email!"),
             reply_markup=try_or_exit(),
         )
         await state.set_state(Register.email)
 
 
-@router.message(Register.complete, F.text.casefold() == "change password")
-@router.message(Register.password_equal, F.text.casefold() == "back")
-@router.message(Register.password, F.text.casefold() == "try again")
+@router.message(Register.complete, F.text.casefold() == __("change password"))
+@router.message(Register.password_equal, F.text.casefold() == __("back"))
+@router.message(Register.password, F.text.casefold() == __("try again"))
 @router.message(Register.password)
 async def psw(message: Message, state: FSMContext) -> None:
     data = await state.get_data()
     await message.answer(
-        f"Enter your password.",
+        _("Enter your password."),
         reply_markup=decline_back() if not data.get('complete') else ReplyKeyboardRemove()
     )
     await state.set_state(Register.validate_psw)
@@ -86,7 +87,7 @@ async def validate_psw(message: Message, state: FSMContext) -> None:
 async def conf_psw(message: Message, state: FSMContext) -> None:
     data = await state.get_data()
     await message.answer(
-        f"Confirm your password.",
+        _("Confirm your password."),
         reply_markup=decline_back() if not data.get('complete') else back_key()
     )
     await state.update_data(password=message.text)
@@ -101,37 +102,36 @@ async def equal_psw(message: Message, state: FSMContext) -> None:
         await state.set_state(Register.complete)
     else:
         await message.answer(
-            f"Password miss match",
+            _("Password miss match"),
             reply_markup=try_or_exit()
         )
         await state.set_state(Register.password)
 
 
-@router.message(Register.complete, F.text.casefold() != "complete")
+@router.message(Register.complete, F.text.casefold() != __("complete"))
 async def complete(message: Message, state: FSMContext) -> None:
     data = await state.get_data()
     await state.update_data(complete=True)
     await message.answer(
-        f'Confirm your entry data\n'
-        f'Email: {data["username"]}\n'
-        f'Password: {data["password"]}',
+        f'{_("Confirm your entry data")}\n'
+        f'{_("Email")}: {data["username"]}\n'
+        f'{_("Password")}: {data["password"]}',
         reply_markup=complete_registration()
     )
 
 
-
-@router.message(Register.complete, F.text.casefold() == "complete")
+@router.message(Register.complete, F.text.casefold() == __("complete"))
 async def complete_reg(message: Message, state: FSMContext) -> None:
     data = await state.get_data()
     response = await registration(data=data)
     if response.get('detail') == 'Verification e-mail sent.':
         await message.answer(
-            'Well done, u have message receipt to your emeil, please check your email inbox and follow instructions to complete registrations',
+            _('Well done, u have message receipt to your emeil, please check your email inbox and follow instructions to complete registrations'),
             reply_markup=to_start()
         )
     else:
         await message.answer(
-            'Something goes wrong',
+            _('Something goes wrong'),
             reply_markup=ReplyKeyboardRemove()
         )
         await command_start(message, state)

@@ -4,7 +4,8 @@ import pymongo
 from aiogram import Router, F
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
-
+from aiogram.utils.i18n import gettext as _
+from aiogram.utils.i18n import lazy_gettext as __
 from configs.settings import COLLECTION_ADV
 from keyboards.inline.show_location import show_location
 from keyboards.reply.profile_key import profile_keyboard, user_key
@@ -15,18 +16,18 @@ from states.profile_state import Profile
 router = Router()
 
 
-@router.message(Profile.my_adv, F.text.casefold() == "profile menu")
-@router.message(Profile.profile, F.text.casefold() == "profile menu")
-@router.message(MainMenu.choice, F.text.casefold() == "profile")
+@router.message(Profile.my_adv, F.text.casefold() == __("profile menu"))
+@router.message(Profile.profile, F.text.casefold() == __("profile menu"))
+@router.message(MainMenu.choice, F.text.casefold() == __("profile"))
 async def profile(message: Message, state: FSMContext):
     await state.set_state(Profile.choice)
     await message.answer(
-        f"Profile menu",
+        _("Profile menu"),
         reply_markup=profile_keyboard(),
     )
 
 
-@router.message(Profile.choice, F.text.casefold() == "my profile")
+@router.message(Profile.choice, F.text.casefold() == __("my profile"))
 async def user_data(message: Message, state: FSMContext):
     await state.set_state(Profile.profile)
     user = await get_user(message.chat.id)
@@ -37,7 +38,7 @@ async def user_data(message: Message, state: FSMContext):
     )
 
 
-@router.message(Profile.choice, F.text.casefold() == "my advertisement")
+@router.message(Profile.choice, F.text.casefold() == __("my advertisement"))
 async def user_adv(message: Message, state: FSMContext):
     await state.set_state(Profile.my_adv)
     advertisements = COLLECTION_ADV.find({'user': message.chat.id}).sort("date", pymongo.ASCENDING)
@@ -45,27 +46,26 @@ async def user_adv(message: Message, state: FSMContext):
     if len(advertisements) != 0:
         for adv in advertisements:
             flat = await get_adv(adv.get('_id'), message.chat.id)
-            print(flat)
             await message.answer_photo(
                 photo=adv.get('scheme'),
-                caption=f"Residential Complex: {flat.get('residential_complex')['name']}\n"
-                        f"Section: {flat.get('section')['name']}\n"
-                        f"Corps: {flat.get('corps')['name']}\n"
-                        f"Floor: {flat.get('floor')['name']}\n"
-                        f"Room amount: {flat.get('room_amount')}\n"
-                        f"Price: {flat.get('price')}\n"
-                        f"Square: {flat.get('square')}\n"
-                        f"Kitchen square: {flat.get('kitchen')}\n"
-                        f"Balcony: {'Yes' if flat.get('balcony') else 'No'}\n"
-                        f"Commission: {flat.get('commission')}\n"
-                        f"District: {flat.get('district')}\n"
-                        f"Micro district {flat.get('micro_district')}\n"
-                        f"Living Condition: {flat.get('living_condition')}\n"
-                        f"Planning: {flat.get('planning')}",
+                caption=f"{_('Residential Complex')}: {flat.get('residential_complex')['name']}\n"
+                        f"{_('Section')}: {flat.get('section')['name']}\n"
+                        f"{_('Corps')}: {flat.get('corps')['name']}\n"
+                        f"{_('Floor')}: {flat.get('floor')['name']}\n"
+                        f"{_('Room amount')}: {flat.get('room_amount')}\n"
+                        f"{_('Price')}: {flat.get('price')}\n"
+                        f"{_('Square')}: {flat.get('square')}\n"
+                        f"{_('Kitchen square')}: {flat.get('kitchen')}\n"
+                        f"{_('Balcony')}: {'Yes' if flat.get('balcony') else 'No'}\n"
+                        f"{_('Commission')}: {flat.get('commission')}\n"
+                        f"{_('District')}: {flat.get('district')}\n"
+                        f"{_('Micro district')}: {flat.get('micro_district')}\n"
+                        f"{_('Living Condition')}: {flat.get('living_condition')}\n"
+                        f"{_('Planning')}: {flat.get('planning')}",
                 reply_markup=show_location(adv.get('location'))
             )
             await asyncio.sleep(0.75)
     await message.answer(
-        f'Done',
+        _('Done'),
         reply_markup=user_key()
     )

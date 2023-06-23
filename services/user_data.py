@@ -6,6 +6,7 @@ from aiohttp import ClientSession
 from configs.settings import COLLECTION, API_ROOT, COLLECTION_ADV
 
 
+
 async def add_user(user_id, data):
     date = datetime.now().date()
     password = data['password']
@@ -71,4 +72,8 @@ async def get_adv(flat_id, user_id):
         ) as response:
             _json = await response.json()
             return _json
+
+
+
+
 

@@ -1,13 +1,15 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.utils.i18n import gettext as _
+from aiogram.utils.i18n import lazy_gettext as __
 
 
 def get_start() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
             keyboard=[
                 [
-                    KeyboardButton(text="Language"),  # switch to choose language
-                    KeyboardButton(text="Log in"),  # switch to start auth
-                    KeyboardButton(text="Registration"),  # switch to start auth
+                          # switch to choose language
+                    KeyboardButton(text=_("Log in")),  # switch to start auth
+                    KeyboardButton(text=_("Registration")),  # switch to start auth
                 ]
             ],
             resize_keyboard=True,
@@ -19,8 +21,8 @@ def language() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
             keyboard=[
                 [
-                    KeyboardButton(text="Rus"),
-                    KeyboardButton(text="Eng"),
+                    KeyboardButton(text="Русский"),
+                    KeyboardButton(text="English"),
                 ]
             ],
             resize_keyboard=True,
@@ -32,8 +34,8 @@ def decline_back() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text="Decline"),
-                KeyboardButton(text="Back"),
+                KeyboardButton(text=_("Decline")),
+                KeyboardButton(text=_("Back")),
             ]
         ],
         resize_keyboard=True,
@@ -45,10 +47,10 @@ def complete_registration() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text="Change email"),
-                KeyboardButton(text="Change password"),
-                KeyboardButton(text="Decline"),
-                KeyboardButton(text="Complete"),
+                KeyboardButton(text=_("Change email")),
+                KeyboardButton(text=_("Change password")),
+                KeyboardButton(text=_("Decline")),
+                KeyboardButton(text=_("Complete")),
             ]
         ],
         resize_keyboard=True,
@@ -60,7 +62,7 @@ def exit_key() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text="Decline"),
+                KeyboardButton(text=_("Decline")),
             ]
         ],
         resize_keyboard=True,
@@ -72,7 +74,7 @@ def back_key() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text="Back"),
+                KeyboardButton(text=_("Back")),
             ]
         ],
         resize_keyboard=True,
@@ -84,7 +86,7 @@ def to_start() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text="Go to title"),
+                KeyboardButton(text=_("Go to title")),
             ]
         ],
         resize_keyboard=True,

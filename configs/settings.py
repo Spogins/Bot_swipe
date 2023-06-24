@@ -1,7 +1,8 @@
 # Bot token can be obtained via https://t.me/BotFather
+import os
+from pathlib import Path
 import pymongo
 from aiogram import Bot, Dispatcher
-from aiogram.utils.i18n import I18n, ConstI18nMiddleware
 from aioredis import Redis
 from aiogram.fsm.storage.redis import RedisStorage
 
@@ -15,14 +16,15 @@ COLLECTION_ADV = CURRENT_DB["advertisement"]
 BOT = Bot(TOKEN, parse_mode="HTML")
 
 
-# redis storage
-redis = Redis()
-storage = RedisStorage(redis=redis)
-# Dispatcher is a root router
-dp = Dispatcher(storage=storage)
+BASE_DIR = Path(__file__).resolve().parent.parent
+LOCALES_DIR = os.path.join(BASE_DIR, 'locales')
 
-i18n = I18n(path='locales', default_locale='en')
-i18n_middleware = ConstI18nMiddleware(i18n=i18n, locale='en')
+# redis storage
+REDIS = Redis()
+REDIS_STORAGE = RedisStorage(redis=REDIS)
+# Dispatcher is a root router
+dp = Dispatcher(storage=REDIS_STORAGE)
+
 
 
 

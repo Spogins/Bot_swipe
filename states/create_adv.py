@@ -21,8 +21,8 @@ class CreateAdvertisement(StatesGroup):
     validate = State()
     check = State()
     complete = State()
-
     gal_validate = State()
+
 
 class ChangeAdv(StatesGroup):
     res_complex = State()

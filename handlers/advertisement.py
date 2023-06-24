@@ -4,7 +4,6 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 from configs.settings import COLLECTION_ADV
 from keyboards.inline.adv_inline import adv_inline_keyboard
-from keyboards.inline.show_location import show_location
 from keyboards.reply.main_menu import to_menu
 from services.user_data import get_adv
 from states.advertisement import Advertisement
@@ -26,20 +25,20 @@ async def show_advertisements(message: Message, state: FSMContext):
 
     await message.answer_photo(
         photo=adv.get('scheme'),
-        caption=f"{__('Residential Complex')}: {flat.get('residential_complex')['name']}\n"
-                f"{__('Section')}: {flat.get('section')['name']}\n"
-                f"{__('Corps')}: {flat.get('corps')['name']}\n"
-                f"{__('Floor')}: {flat.get('floor')['name']}\n"
-                f"{__('Room amount')}: {flat.get('room_amount')}\n"
-                f"{__('Price')}: {flat.get('price')}\n"
-                f"{__('Square')}: {flat.get('square')}\n"
-                f"{__('Kitchen square')}: {flat.get('kitchen')}\n"
-                f"{__('Balcony')}: {'Yes' if flat.get('balcony') else 'No'}\n"
-                f"{__('Commission')}: {flat.get('commission')}\n"
-                f"{__('District')}: {flat.get('district')}\n"
-                f"{__('Micro district')}: {flat.get('micro_district')}\n"
-                f"{__('Living Condition')}: {flat.get('living_condition')}\n"
-                f"{__('Planning')}: {flat.get('planning')}",
+        caption=f"{_('Residential Complex')}: {flat.get('residential_complex')['name']}\n"
+                f"{_('Section')}: {flat.get('section')['name']}\n"
+                f"{_('Corps')}: {flat.get('corps')['name']}\n"
+                f"{_('Floor')}: {flat.get('floor')['name']}\n"
+                f"{_('Room amount')}: {flat.get('room_amount')}\n"
+                f"{_('Price')}: {flat.get('price')}\n"
+                f"{_('Square')}: {flat.get('square')}\n"
+                f"{_('Kitchen square')}: {flat.get('kitchen')}\n"
+                f"{_('Balcony')}: {'Yes' if flat.get('balcony') else 'No'}\n"
+                f"{_('Commission')}: {flat.get('commission')}\n"
+                f"{_('District')}: {flat.get('district')}\n"
+                f"{_('Micro district')}: {flat.get('micro_district')}\n"
+                f"{_('Living Condition')}: {flat.get('living_condition')}\n"
+                f"{_('Planning')}: {flat.get('planning')}",
         reply_markup=adv_inline_keyboard(adv.get('location'), len(advertisements), 0)
     )
 

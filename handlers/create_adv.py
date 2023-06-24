@@ -6,17 +6,12 @@ from keyboards.reply.adv_create import *
 from keyboards.reply.retry import try_or_exit, decline_changing
 from keyboards.reply.start import *
 from services.adv_create import adv_request
-from services.user_data import get_new_token, get_user, add_adv
+from services.user_data import add_adv
 from states.create_adv import CreateAdvertisement, ChangeAdv
 from states.main_menu import MainMenu
 from aiogram.utils.i18n import gettext as _
 from aiogram.utils.i18n import lazy_gettext as __
 router = Router()
-
-
-# photo = message.photo[-1]
-#     photo = photo.file_id
-#     await message.answer_photo(photo)
 
 
 @router.message(CreateAdvertisement.check, F.text.casefold() == __("change residential"))
@@ -609,21 +604,21 @@ async def check(message: Message, state: FSMContext) -> None:
     data = await state.get_data()
     await state.update_data(complete=True)
     await message.answer(
-        f"{__('Select check')}\n"
-        f"{__('Residential Complex')}: {data.get('res_complex')}\n"
-        f"{__('Section')}: {data.get('section')}\n"
-        f"{__('Corps')}: {data.get('corps')}\n"
-        f"{__('Floor')}: {data.get('floor')}\n"
-        f"{__('Room amount')}: {data.get('room_amount')}\n"
-        f"{__('Price')}: {data.get('price')}\n"
-        f"{__('Square')}: {data.get('square')}\n"
-        f"{__('Kitchen square')}: {data.get('kitchen')}\n"
-        f"{__('Balcony')}: {'Yes' if data.get('balcony') else 'No'}\n"
-        f"{__('Commission')}: {data.get('commission')}\n"
-        f"{__('District')}: {data.get('district')}\n"
-        f"{__('Micro district')}: {data.get('micro_district')}\n"
-        f"{__('Living Condition')}: {data.get('living_condition')}\n"
-        f"{__('Planning')}: {data.get('planning')}",
+        f"{_('Select check')}\n"
+        f"{_('Residential Complex')}: {data.get('res_complex')}\n"
+        f"{_('Section')}: {data.get('section')}\n"
+        f"{_('Corps')}: {data.get('corps')}\n"
+        f"{_('Floor')}: {data.get('floor')}\n"
+        f"{_('Room amount')}: {data.get('room_amount')}\n"
+        f"{_('Price')}: {data.get('price')}\n"
+        f"{_('Square')}: {data.get('square')}\n"
+        f"{_('Kitchen square')}: {data.get('kitchen')}\n"
+        f"{_('Balcony')}: {'Yes' if data.get('balcony') else 'No'}\n"
+        f"{_('Commission')}: {data.get('commission')}\n"
+        f"{_('District')}: {data.get('district')}\n"
+        f"{_('Micro district')}: {data.get('micro_district')}\n"
+        f"{_('Living Condition')}: {data.get('living_condition')}\n"
+        f"{_('Planning')}: {data.get('planning')}",
         reply_markup=change_adv(),
     )
     await message.answer_photo(caption=_('Scheme'), photo=data.get('scheme'))

@@ -1,9 +1,6 @@
 import base64
 import json
-from typing import Dict
-
 from aiohttp import ClientSession
-
 from configs.settings import BOT, API_ROOT
 from services.user_data import get_new_token, get_user
 

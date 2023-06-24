@@ -1,8 +1,5 @@
-# simple mail str validation
 import re
-
 from aiohttp import ClientSession
-
 from configs.settings import API_ROOT
 
 

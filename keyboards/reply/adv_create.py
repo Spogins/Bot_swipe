@@ -1,10 +1,7 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from aiogram.utils.i18n import gettext as _
-# draft = ('draft', 'Черновая')
-# repair_required = ('repair', 'Нужен ремонт')
-# good = ('good', 'В жилом состоянии')
-# studio_bathroom = ('studio-bathroom', 'Студия санузел')
-#         studio = ('studio', 'Студия')
+
+
 def conditions_choice() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[

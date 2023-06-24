@@ -8,7 +8,7 @@ from aiogram.utils.i18n import lazy_gettext as __
 from handlers.main_menu import main_menu
 from keyboards.reply.retry import try_or_exit
 from keyboards.reply.start import *
-from services.user_data import get_user, add_user, update_token, get_new_token
+from services.user_data import get_user, add_user, update_token
 from services.validators import *
 from states.main_menu import MainMenu
 from states.registration import Register

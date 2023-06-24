@@ -10,15 +10,8 @@ class Start(StatesGroup):
     language = State()
 
 
-
 class Exit(StatesGroup):
     cancel = State()
 
 
-# class Authorization(StatesGroup):
-#     email = State()
-#     password = State()
 
-
-# class Validator(StatesGroup):
-#     not_valid = State()

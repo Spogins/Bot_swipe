@@ -1,10 +1,8 @@
 from aiogram import Router, F
 from aiogram.fsm.context import FSMContext
-from aiogram.types import Message, ReplyKeyboardRemove
+from aiogram.types import Message
 from keyboards.reply.main_menu import main_keyboard
-from keyboards.reply.retry import *
 from keyboards.reply.start import *
-from services.validators import *
 from states.advertisement import Advertisement
 from states.create_adv import CreateAdvertisement
 from states.main_menu import MainMenu

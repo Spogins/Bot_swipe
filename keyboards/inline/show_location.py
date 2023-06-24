@@ -1,5 +1,4 @@
 from aiogram import types
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.i18n import gettext as _
 from configs.settings import BOT, dp
 

@@ -1,8 +1,6 @@
 from datetime import datetime
-
 import bcrypt
 from aiohttp import ClientSession
-
 from configs.settings import COLLECTION, API_ROOT, COLLECTION_ADV
 
 

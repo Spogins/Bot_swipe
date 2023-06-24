@@ -1,0 +1,574 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-06-23 19:09+0300\n"
+"PO-Revision-Date: 2023-06-24 16:05+0300\n"
+"Last-Translator: \n"
+"Language-Team: ru <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Generated-By: Babel 2.9.1\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: handlers/create_adv.py:32
+msgid "Select Residential Complex"
+msgstr "Укажите ЖК"
+
+#: handlers/create_adv.py:41
+msgid "Residential Complex changed"
+msgstr "ЖК изменен"
+
+#: handlers/create_adv.py:59
+msgid "Select Section"
+msgstr "Укажите Секцию"
+
+#: handlers/create_adv.py:68
+msgid "Section changed"
+msgstr "Секция изменена"
+
+#: handlers/create_adv.py:87
+msgid "Select Corps"
+msgstr "Укажите Корпус"
+
+#: handlers/create_adv.py:96
+msgid "Corps changed"
+msgstr "Корпус изменен"
+
+#: handlers/create_adv.py:115
+msgid "Select Floor"
+msgstr "Укажите Этаж"
+
+#: handlers/create_adv.py:124
+msgid "Floor changed"
+msgstr "Этаж изменен"
+
+#: handlers/create_adv.py:143
+msgid "Select Room amount"
+msgstr "Укажите кол-во комнат"
+
+#: handlers/create_adv.py:152
+msgid "Room amount changed"
+msgstr "Кол-во комнат изменено"
+
+#: handlers/create_adv.py:171
+msgid "Select Price"
+msgstr "Укажите Цену"
+
+#: handlers/create_adv.py:180
+msgid "Price changed"
+msgstr "Цена изменена"
+
+#: handlers/create_adv.py:199
+msgid "Select Square"
+msgstr "Укажите Площадь"
+
+#: handlers/create_adv.py:208
+msgid "Square changed"
+msgstr "Площадь изменена"
+
+#: handlers/create_adv.py:227
+msgid "Select Kitchen square"
+msgstr "Укажите Площадь кухни"
+
+#: handlers/create_adv.py:236
+msgid "Kitchen square changed"
+msgstr "Площадь кухни изменена"
+
+#: handlers/create_adv.py:255
+msgid "Choice Balcony"
+msgstr "Балконы"
+
+#: handlers/create_adv.py:267
+msgid "Balcony changed"
+msgstr "Балконы изменены"
+
+#: handlers/create_adv.py:289
+msgid "Select Commission"
+msgstr "Укажите Комиссию"
+
+#: handlers/create_adv.py:298
+msgid "Commission changed"
+msgstr "Комиссия изменена"
+
+#: handlers/create_adv.py:317
+msgid "Select District"
+msgstr "Укажите Район"
+
+#: handlers/create_adv.py:326
+msgid "District changed"
+msgstr "Район изменен"
+
+#: handlers/create_adv.py:345
+msgid "Select Micro District"
+msgstr "Укажите Микрорайон"
+
+#: handlers/create_adv.py:354
+msgid "Micro district changed"
+msgstr "Микрорайон изменен"
+
+#: handlers/create_adv.py:373
+msgid "Choice Living condition"
+msgstr "Выберите Жилое состояние"
+
+#: handlers/create_adv.py:382
+msgid "Living condition changed"
+msgstr "Жилое состояние изменено"
+
+#: handlers/create_adv.py:401
+msgid "Choice Planning"
+msgstr "Выберите Планировку"
+
+#: handlers/create_adv.py:410
+msgid "Planning changed"
+msgstr "Планировка изменена"
+
+#: handlers/create_adv.py:431
+msgid "Select Scheme"
+msgstr "Выберите Схему"
+
+#: handlers/create_adv.py:443
+msgid "Scheme changed"
+msgstr "Схема изменена"
+
+#: handlers/create_adv.py:451 handlers/create_adv.py:479
+msgid "Please Send image scheme"
+msgstr "Схема должна быть картинкой"
+
+#: handlers/create_adv.py:473
+msgid "Select Photo gallery"
+msgstr "Укажите фото галерею"
+
+#: handlers/create_adv.py:486
+msgid "Select photo_gallery"
+msgstr "Укажите фото галерею"
+
+#: handlers/create_adv.py:498
+msgid "Photo gallery changed"
+msgstr "Фото галерея изменена"
+
+#: handlers/create_adv.py:506 handlers/create_adv.py:536
+msgid "Please Send image gallery"
+msgstr "Галерея должна быть картинкой"
+
+#: handlers/create_adv.py:530 handlers/create_adv.py:543
+msgid "Select location"
+msgstr "Выберите Локацию"
+
+#: handlers/create_adv.py:554
+msgid "Location changed"
+msgstr "Локация изменена"
+
+#: handlers/create_adv.py:562 handlers/create_adv.py:580
+msgid "Please Select location"
+msgstr "Выберите Локацию"
+
+#: handlers/create_adv.py:629
+msgid "Scheme"
+msgstr "Схема "
+
+#: handlers/main_menu.py:45
+msgid "Main menu"
+msgstr "Главное меню"
+
+#: handlers/main_menu.py:54
+msgid "Choose you language!"
+msgstr "Выберите язык"
+
+#: handlers/profile.py:25
+msgid "Profile menu"
+msgstr "Меню профиля"
+
+#: handlers/profile.py:69
+msgid "Done"
+msgstr "Готово"
+
+#: handlers/registration.py:23
+msgid "Enter your email"
+msgstr "Введите почту"
+
+#: handlers/registration.py:46
+msgid "Mail already in use!"
+msgstr "Почта уже используется"
+
+#: handlers/registration.py:53 handlers/start.py:69
+msgid "You entered is not valid email!"
+msgstr "Не валидная почта"
+
+#: handlers/registration.py:66 handlers/start.py:78
+msgid "Enter your password."
+msgstr "Введите пароль"
+
+#: handlers/registration.py:90
+msgid "Confirm your password."
+msgstr "Подтвердить пароль"
+
+#: handlers/registration.py:105
+msgid "Password miss match"
+msgstr "Пароли не совпадают"
+
+#: handlers/registration.py:129
+msgid ""
+"Well done, u have message receipt to your emeil, please check your email "
+"inbox and follow instructions to complete registrations"
+msgstr ""
+"Для завершения регистрации перейдите на почту и следуйте инструкциям"
+
+#: handlers/registration.py:134
+msgid "Something goes wrong"
+msgstr "Что-то пошло не так"
+
+#: handlers/start.py:38
+msgid "Nice to meet you!"
+msgstr "Добро пожаловать!"
+
+#: handlers/start.py:50
+msgid "Enter your email."
+msgstr "Введите почту"
+
+#: handlers/start.py:93
+msgid "Incorrect password"
+msgstr "Не правильный пароль"
+
+#: handlers/start.py:119
+msgid "Invalid email!"
+msgstr "Не правильная почта"
+
+#: keyboards/inline/adv_inline.py:15 keyboards/inline/show_location.py:12
+msgid "Show location"
+msgstr "Показать локацию"
+
+#: keyboards/inline/adv_inline.py:21 keyboards/inline/adv_inline.py:35
+msgid "Next"
+msgstr "Вперёд"
+
+#: keyboards/inline/adv_inline.py:27 keyboards/inline/adv_inline.py:34
+#: keyboards/reply/adv_create.py:16 keyboards/reply/adv_create.py:48
+#: keyboards/reply/adv_create.py:79 keyboards/reply/adv_create.py:109
+#: keyboards/reply/start.py:38 keyboards/reply/start.py:77
+msgid "Back"
+msgstr "Назад"
+
+#: keyboards/reply/adv_create.py:12 keyboards/reply/adv_create.py:28
+msgid "draft"
+msgstr "Черновая"
+
+#: keyboards/reply/adv_create.py:13 keyboards/reply/adv_create.py:29
+msgid "repair"
+msgstr "Нужен ремонт"
+
+#: keyboards/reply/adv_create.py:14 keyboards/reply/adv_create.py:30
+msgid "good"
+msgstr "В жилом состоянии"
+
+#: keyboards/reply/adv_create.py:15 keyboards/reply/adv_create.py:47
+#: keyboards/reply/adv_create.py:78 keyboards/reply/adv_create.py:108
+#: keyboards/reply/adv_create.py:151 keyboards/reply/profile_key.py:13
+#: keyboards/reply/retry.py:10 keyboards/reply/start.py:37
+#: keyboards/reply/start.py:52 keyboards/reply/start.py:65
+msgid "Decline"
+msgstr "Отмена"
+
+#: keyboards/reply/adv_create.py:33 keyboards/reply/adv_create.py:64
+#: keyboards/reply/adv_create.py:95 keyboards/reply/retry.py:22
+msgid "Decline changing"
+msgstr "Отменить изменение"
+
+#: keyboards/reply/adv_create.py:45 keyboards/reply/adv_create.py:60
+msgid "studio"
+msgstr "Студия"
+
+#: keyboards/reply/adv_create.py:46 keyboards/reply/adv_create.py:61
+msgid "studio-bathroom"
+msgstr "Студия санузел"
+
+#: keyboards/reply/adv_create.py:107
+msgid "Add location"
+msgstr "Добавить локацию"
+
+#: keyboards/reply/adv_create.py:121
+msgid "Change Residential"
+msgstr "Изменить ЖК"
+
+#: keyboards/reply/adv_create.py:122
+msgid "Change Corps"
+msgstr "Изменить Корпус"
+
+#: keyboards/reply/adv_create.py:123
+msgid "Change Section"
+msgstr "Изменить Секцию"
+
+#: keyboards/reply/adv_create.py:126
+msgid "Change Floor"
+msgstr "Изменить Этаж"
+
+#: keyboards/reply/adv_create.py:127
+msgid "Change Room amount"
+msgstr "Изменить кол-во комнат"
+
+#: keyboards/reply/adv_create.py:128
+msgid "Change Price"
+msgstr "Изменить Цену"
+
+#: keyboards/reply/adv_create.py:131
+msgid "Change Square"
+msgstr "Изменить Площадь"
+
+#: keyboards/reply/adv_create.py:132
+msgid "Change Kitchen square"
+msgstr "Изменить Площадь кухни"
+
+#: keyboards/reply/adv_create.py:133
+msgid "Change Balcony"
+msgstr "Изменить Балконы"
+
+#: keyboards/reply/adv_create.py:136
+msgid "Change Commission"
+msgstr "Изменить Комиссию"
+
+#: keyboards/reply/adv_create.py:137
+msgid "Change District"
+msgstr "Изменить Район"
+
+#: keyboards/reply/adv_create.py:138
+msgid "Change Micro District"
+msgstr "Изменить Микрорайон"
+
+#: keyboards/reply/adv_create.py:141
+msgid "Change Living condition"
+msgstr "Изменить Жилое состояние"
+
+#: keyboards/reply/adv_create.py:142
+msgid "Change Planning"
+msgstr "Изменить Планировку"
+
+#: keyboards/reply/adv_create.py:143
+msgid "Change Scheme"
+msgstr "Изменить Схему"
+
+#: keyboards/reply/adv_create.py:146
+msgid "Change Photo gallery"
+msgstr "Изменить фото галерею"
+
+#: keyboards/reply/adv_create.py:147
+msgid "Change Location"
+msgstr "Изменить Локацию"
+
+#: keyboards/reply/adv_create.py:150 keyboards/reply/start.py:53
+msgid "Complete"
+msgstr "Завершить"
+
+#: keyboards/reply/main_menu.py:9
+msgid "Advertisements"
+msgstr "Объявления"
+
+#: keyboards/reply/main_menu.py:10
+msgid "Create Advertisement"
+msgstr "Создать объявление"
+
+#: keyboards/reply/main_menu.py:11
+msgid "Profile"
+msgstr "Профиль"
+
+#: keyboards/reply/main_menu.py:12
+msgid "Language"
+msgstr "Язык"
+
+#: keyboards/reply/main_menu.py:24 keyboards/reply/profile_key.py:25
+msgid "Main Menu"
+msgstr "Главное меню"
+
+#: keyboards/reply/profile_key.py:9
+msgid "My Profile"
+msgstr "Мой Профиль"
+
+#: keyboards/reply/profile_key.py:10
+msgid "My Advertisement"
+msgstr "Мои объявления"
+
+#: keyboards/reply/profile_key.py:26
+msgid "Profile Menu"
+msgstr "Меню профиля"
+
+#: keyboards/reply/retry.py:9
+msgid "Try again"
+msgstr "Попробовать снова"
+
+#: keyboards/reply/start.py:11
+msgid "Log in"
+msgstr "Войти"
+
+#: keyboards/reply/start.py:12
+msgid "Registration"
+msgstr "Регистрация"
+
+#: keyboards/reply/start.py:50
+msgid "Change email"
+msgstr "Изменить почту"
+
+#: keyboards/reply/start.py:51
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: keyboards/reply/start.py:89
+msgid "Go to title"
+msgstr "В главное меню"
+
+msgid "main menu"
+msgstr "главное меню"
+
+msgid "decline"
+msgstr "отмена"
+
+msgid "language"
+msgstr "язык"
+
+msgid "advertisements"
+msgstr "объявления"
+
+msgid "change residential"
+msgstr "изменить ЖК"
+
+msgid "back"
+msgstr "назад"
+
+msgid "create advertisement"
+msgstr "создать объявление"
+
+msgid "decline changing"
+msgstr "отменить изменение"
+
+msgid "change section"
+msgstr "изменить секцию"
+
+msgid "change corps"
+msgstr "изменить корпус"
+
+msgid "change floor"
+msgstr "изменить этаж"
+
+msgid "change room amount"
+msgstr "изменить кол-во комнат"
+
+msgid "change price"
+msgstr "изменить цену"
+
+msgid "change square"
+msgstr "изменить площадь"
+
+msgid "change kitchen square"
+msgstr "изменить площадь кухни"
+
+msgid "change balcony"
+msgstr "изменить балконы"
+
+msgid "change commission"
+msgstr "изменить комиссию"
+
+msgid "change district"
+msgstr "изменить район"
+
+msgid "change micro district"
+msgstr "изменить микрорайон"
+
+msgid "change living condition"
+msgstr "изменить жилое состояние"
+
+msgid "change planning"
+msgstr "изменить планировку"
+
+msgid "try again"
+msgstr "попробовать снова"
+
+msgid "change scheme"
+msgstr "изменить схему"
+
+msgid "change photo gallery"
+msgstr "изменить фото галерею"
+
+msgid "change location"
+msgstr "изменить локацию"
+
+msgid "complete"
+msgstr "завершить"
+
+msgid "profile menu"
+msgstr "меню профиля"
+
+msgid "profile"
+msgstr "профиль"
+
+msgid "my profile"
+msgstr "мой профиль"
+
+msgid "my advertisement"
+msgstr "мои объявления"
+
+msgid "change email"
+msgstr "изменить почту"
+
+msgid "registration"
+msgstr "регистрация"
+
+msgid "change password"
+msgstr "изменить пароль"
+
+msgid "go to title"
+msgstr "в главное меню"
+
+msgid "log in"
+msgstr "войти"
+
+msgid "Residential Complex"
+msgstr "ЖК"
+
+msgid "Section"
+msgstr "Секция"
+
+msgid "Corps"
+msgstr "Корпус"
+
+msgid "Floor"
+msgstr "Этаж"
+
+msgid "Room amount"
+msgstr "Кол-во комнат"
+
+msgid "Price"
+msgstr "Цена"
+
+msgid "Square"
+msgstr "Площадь"
+
+msgid "Kitchen square"
+msgstr "Площадь кухни"
+
+msgid "Balcony"
+msgstr "Балконы"
+
+msgid "Commission"
+msgstr "Комиссия"
+
+msgid "District"
+msgstr "Район"
+
+msgid "Micro district"
+msgstr "Микрорайон"
+
+msgid "Living Condition"
+msgstr "Жилое состояние"
+
+msgid "Planning"
+msgstr "Планировка"
+
+msgid "Select check"
+msgstr "Проверьте данные"

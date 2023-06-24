@@ -73,8 +73,8 @@ def balcony_choice() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text=_("Yes")),
-                KeyboardButton(text=_("No")),
+                KeyboardButton(text="Yes"),
+                KeyboardButton(text="No"),
                 KeyboardButton(text=_("Decline")),
                 KeyboardButton(text=_("Back")),
             ]

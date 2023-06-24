@@ -58,11 +58,13 @@ async def lang_choose(message: Message, state: FSMContext) -> None:
 
 @router.message(Start.language, F.text.casefold() == 'русский')
 async def lang_rus(message: Message, state: FSMContext) -> None:
+    await state.update_data(language='ru')
     await state.set_state(MainMenu.menu)
     await main_menu(message, state)
 
 
 @router.message(Start.language, F.text.casefold() == 'english')
 async def lang_eng(message: Message, state: FSMContext) -> None:
+    await state.update_data(language='en')
     await state.set_state(MainMenu.menu)
     await main_menu(message, state)

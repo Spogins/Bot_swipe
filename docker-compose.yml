@@ -3,10 +3,12 @@ version: '3.7'
 services:
   bot:
     build: .
-    command: make run
+    command: python main.py
     env_file:
       - ./.env
     restart: always
+    volumes:
+      - ./main.py:/bot_app/main.py
 
   redis:
     image: redis:alpine
@@ -26,3 +28,4 @@ services:
 volumes:
   cache:
   mongo:
+  bot:

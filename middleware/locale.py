@@ -34,10 +34,6 @@ class LocaleMiddleware(I18nMiddleware):
                 await REDIS.set(f'{event_from_user.id}', 'en')
                 redis_language = await REDIS.get(f'{event_from_user.id}')
         except:
-            if redis_language is not None:
-                redis_language = redis_language.decode('utf-8')
             return redis_language
 
-        if redis_language is not None:
-            redis_language = redis_language.decode('utf-8')
         return redis_language

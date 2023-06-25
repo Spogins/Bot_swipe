@@ -30,4 +30,13 @@ async def main() -> None:
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-    asyncio.run(main())
+    loop = asyncio.get_event_loop()
+    try:
+        loop.run_until_complete(main())
+    except KeyboardInterrupt:
+        loop.run_until_complete(dp.storage.close())
+        loop.run_until_complete(dp.storage.wait_closed())
+        loop.run_until_complete(BOT.session.close())
+    finally:
+        loop.close()
+    # asyncio.run(main())

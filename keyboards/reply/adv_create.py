@@ -6,9 +6,9 @@ def conditions_choice() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text=_("draft")),
-                KeyboardButton(text=_("repair")),
-                KeyboardButton(text=_("good")),
+                KeyboardButton(text="draft"),
+                KeyboardButton(text="repair"),
+                KeyboardButton(text="good"),
                 KeyboardButton(text=_("Decline")),
                 KeyboardButton(text=_("Back")),
             ]
@@ -22,9 +22,9 @@ def conditions_changing() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text=_("draft")),
-                KeyboardButton(text=_("repair")),
-                KeyboardButton(text=_("good")),
+                KeyboardButton(text="draft"),
+                KeyboardButton(text="repair"),
+                KeyboardButton(text="good"),
             ],
             [
                 KeyboardButton(text=_("Decline changing")),
@@ -39,8 +39,8 @@ def planning_choice() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text=_("studio")),
-                KeyboardButton(text=_("studio-bathroom")),
+                KeyboardButton(text="studio"),
+                KeyboardButton(text="studio-bathroom"),
                 KeyboardButton(text=_("Decline")),
                 KeyboardButton(text=_("Back")),
             ]
@@ -54,8 +54,8 @@ def planning_changing() -> ReplyKeyboardMarkup:
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text=_("studio")),
-                KeyboardButton(text=_("studio-bathroom")),
+                KeyboardButton(text="studio"),
+                KeyboardButton(text="studio-bathroom"),
             ],
             [
                 KeyboardButton(text=_("Decline changing")),

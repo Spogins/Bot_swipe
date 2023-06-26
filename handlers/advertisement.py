@@ -43,6 +43,6 @@ async def show_advertisements(message: Message, state: FSMContext):
     )
 
     await message.answer(
-        f'Menu',
+        _('Menu'),
         reply_markup=to_menu()
     )

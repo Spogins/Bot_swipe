@@ -20,6 +20,12 @@ msgstr ""
 "Generated-By: Babel 2.9.1\n"
 "X-Generator: Poedit 3.0.1\n"
 
+
+#: handlers/advertisement.py:46
+msgid "Menu"
+msgstr "Меню"
+
+
 #: handlers/create_adv.py:32
 msgid "Select Residential Complex"
 msgstr "Укажите ЖК"

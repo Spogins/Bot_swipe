@@ -9,12 +9,17 @@ def adv_inline_keyboard(location, adv, ct):
     # Создание инлайн-клавиатуры с кнопкой локации
     location = f"location_{location.get('latitude')}-{location.get('longitude')}"
     advertisement = f"advertisement_{ct}"
-    _adv = adv - 1
     inline_keyboard = [
         [
             types.InlineKeyboardButton(text=_('Show location'), callback_data=location),
         ],
     ]
+    if adv == 0:
+        inline_markup = types.InlineKeyboardMarkup(inline_keyboard=inline_keyboard)
+        return inline_markup
+
+    _adv = adv - 1
+
     if ct == 0:
         inline_keyboard.append(
             [
